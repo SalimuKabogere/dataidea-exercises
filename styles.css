@@ -1,0 +1,123 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    justify-content: center;
+    padding: 20px;
+    background: white;
+    align-items: center;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    
+}
+.wrapper{
+    background: #fff;
+    display: block;
+    border: 1px solid rgb(0, 0, 20, .2);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    height: 500px;
+    margin-top: 100px;
+}
+h2{
+    color: rgba(6, 0, 0, 0.692);
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.form{
+    padding: 20px;
+    background: #fff;
+    display: block;
+    
+}
+.form label{
+    color: rgba(6, 0, 0, 0.692);
+    display: block;
+    font-weight: bold;
+}
+.form input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+.form button{
+
+    width: 100%;
+    background: rgba(0, 128, 0, 0.594);
+    color: rgba(6, 0, 0, 0.692);
+    border-radius: 10px;
+    padding: 5px;
+    border: none;
+
+    font-size: 15px;
+    font-weight: bold;
+
+
+}
+.form button:hover{
+    background-color: rgba(0, 195, 255, 0.9);
+}
+.list{
+    margin-top: 20px;
+}
+.list h3{
+    text-align: center;
+    color: rgba(6, 0, 0, 0.692);
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.list ul{
+    list-style-type: none;
+    padding: 0;
+}
+.items{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid rgba(6, 0, 0, 0.692);
+}
+.items li{
+    flex: -1;
+    list-style-type: none;
+}
+.items button:nth-child(3){
+    background: red;
+    border-radius: 10px;
+    border: none;
+    color: rgba(6, 0, 0, 0.692);
+    font-weight: bold;
+    width: 100px;
+}
+.items button:nth-child(3):hover{
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+  }
+.items button:nth-child(2){
+    background: rgba(0, 195, 255, 0.9);
+    border-radius: 10px;
+    border: none;
+    color: rgba(6, 0, 0, 0.692);
+    font-weight: bold;
+    width: 100px;
+}
+.items button:nth-child(2):hover{
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
