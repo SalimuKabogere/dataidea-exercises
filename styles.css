@@ -1,123 +1,128 @@
-*{
-    padding: 0;
+/* styles.css */
+
+/* Resetting default margin and padding */
+body, h1, form {
     margin: 0;
-    box-sizing: border-box;
+    padding: 0;
 }
-body{
-    justify-content: center;
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     padding: 20px;
-    background: white;
-    align-items: center;
-    display: flex;
-    font-family: Arial, Helvetica, sans-serif;
-    height: 100vh;
-    
 }
-.wrapper{
-    background: #fff;
-    display: block;
-    border: 1px solid rgb(0, 0, 20, .2);
-    border-radius: 10px;
-    width: 100%;
-    max-width: 600px;
-    height: 500px;
-    margin-top: 100px;
-}
-h2{
-    color: rgba(6, 0, 0, 0.692);
-    font-weight: bold;
+
+h1 {
     text-align: center;
-    margin-top: 20px;
     margin-bottom: 20px;
 }
-.form{
+
+.form {
+    background-color: #fff;
     padding: 20px;
-    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form label {
     display: block;
-    
-}
-.form label{
-    color: rgba(6, 0, 0, 0.692);
-    display: block;
-    font-weight: bold;
-}
-.form input{
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    
-}
-.form button{
-
-    width: 100%;
-    background: rgba(0, 128, 0, 0.594);
-    color: rgba(6, 0, 0, 0.692);
-    border-radius: 10px;
-    padding: 5px;
-    border: none;
-
-    font-size: 15px;
-    font-weight: bold;
-
-
-}
-.form button:hover{
-    background-color: rgba(0, 195, 255, 0.9);
-}
-.list{
-    margin-top: 20px;
-}
-.list h3{
-    text-align: center;
-    color: rgba(6, 0, 0, 0.692);
-    font-weight: bold;
-    font-size: 20px;
     margin-bottom: 10px;
 }
-.list ul{
-    list-style-type: none;
+
+.form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.list {
+    margin-top: 20px;
+}
+
+.list h2 {
+    margin-bottom: 10px;
+}
+
+.list ol {
+    
     padding: 0;
 }
-.items{
-    display: flex;
-    justify-content: space-between;
+
+.list li {
+    background-color: #fff;
     padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid rgba(6, 0, 0, 0.692);
+    margin-bottom: 5px;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.items li{
-    flex: -1;
-    list-style-type: none;
-}
-.items button:nth-child(3){
-    background: red;
-    border-radius: 10px;
-    border: none;
-    color: rgba(6, 0, 0, 0.692);
-    font-weight: bold;
-    width: 100px;
-}
-.items button:nth-child(3):hover{
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease;
+
+/* Style for activity list */
+#activity-list {
+    
+    padding: 0;
   }
-.items button:nth-child(2){
-    background: rgba(0, 195, 255, 0.9);
-    border-radius: 10px;
+  
+  /* Style for each activity item */
+  .activity-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  /* Style for delete button */
+  .delete-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #ff6961; /* Red color */
+    color: #fff; /* White text color */
     border: none;
-    color: rgba(6, 0, 0, 0.692);
-    font-weight: bold;
-    width: 100px;
-}
-.items button:nth-child(2):hover{
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: box-shadow 0.3s ease;
-}
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover {
+    background-color: #e74c3c; /* Darker red color on hover */
+  }
+  
+  /* Style for edit button */
+  .edit-button {
+    position: absolute;
+    top: 5px;
+    right: 60px; /* Adjust the position as needed */
+    background-color: #77dd77; /* Green color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .edit-button:hover {
+    background-color: #4caf50; /* Darker green color on hover */
+  }
+
+  

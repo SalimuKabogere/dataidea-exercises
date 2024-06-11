@@ -1,57 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="main.js" />
-    <title>TODO form</title>
-  </head>
-  <body>
-    <div class="wrapper">
-      <h2>MY TO-DO FORM</h2>
-      <form class="form">
-        <label for="Activity"
-          >Activity<input type="text" placeholder="Enter the todo Activity"
-        /></label>
-        <br />
-        <button>Submit</button>
-      </form>
-
-      <div class="list">
-        <h3>Your Activities</h3>
-        <ul>
-          <div class="items">
-            <li>Activity 1</li>
-            <button>Edit</button>
-            <button>Delete</button>
-          </div>
-
-          <div class="items">
-            <li>Activity 2</li>
-            <button class="btn1">Edit</button>
-            <button class="btn1">Delete</button>
-          </div>
-
-          <div class="items">
-            <li>Activity 3</li>
-            <button class="btn1">Edit</button>
-            <button class="btn1">Delete</button>
-          </div>
-
-          <div class="items">
-            <li>Activity 4</li>
-            <button class="btn1">Edit</button>
-            <button class="btn1">Delete</button>
-          </div>
-
-          <div class="items">
-            <li>Activity 5</li>
-            <button class="btn1">Edit</button>
-            <button class="btn1">Delete</button>
-          </div>
-        </ul>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Todo app</title>
+</head>
+<body>
+    <h1>My To-Do App</h1>
+    <form id="form" class="form">
+        <label for="activity">Activity
+            <input type="text" id="activity" placeholder="Enter the Activity">
+        </label>
+        <br>
+        <button type="submit" disabled id="submit">Submit Activity</button>
+        <br>
+    </form>
+    <div class="list">
+        <h2>Your activities</h2>
+        <ol id="activity-list"></ol>
     </div>
-  </body>
+    <script src="main.js"></script>
+</body>
 </html>
