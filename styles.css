@@ -1,12 +1,7 @@
-/* styles.css */
-
-/* Resetting default margin and padding */
 body, h1, form {
     margin: 0;
     padding: 0;
 }
-
-/* Basic styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -75,14 +70,10 @@ h1 {
     border-radius: 3px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-/* Style for activity list */
 #activity-list {
     
     padding: 0;
   }
-  
-  /* Style for each activity item */
   .activity-item {
     margin-bottom: 10px;
     padding: 10px;
@@ -96,8 +87,8 @@ h1 {
     position: absolute;
     top: 5px;
     right: 5px;
-    background-color: #ff6961; /* Red color */
-    color: #fff; /* White text color */
+    background-color: #ff6961;
+    color: #fff; 
     border: none;
     padding: 5px 10px;
     border-radius: 3px;
@@ -105,16 +96,16 @@ h1 {
   }
   
   .delete-button:hover {
-    background-color: #e74c3c; /* Darker red color on hover */
+    background-color: #e74c3c; 
   }
   
   /* Style for edit button */
   .edit-button {
     position: absolute;
     top: 5px;
-    right: 60px; /* Adjust the position as needed */
-    background-color: #77dd77; /* Green color */
-    color: #fff; /* White text color */
+    right: 60px; 
+    background-color: #77dd77; 
+    color: #fff; 
     border: none;
     padding: 5px 10px;
     border-radius: 3px;
@@ -122,7 +113,7 @@ h1 {
   }
   
   .edit-button:hover {
-    background-color: #4caf50; /* Darker green color on hover */
+    background-color: #4caf50; 
   }
 
   
