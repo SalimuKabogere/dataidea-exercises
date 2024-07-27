@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do App</title>
+    <meta name="csrf-token" content="{{ csrf_token }}" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="activitys">
+      <h1>Activity List</h1>
+      <ol id="activity-list" class="content-list"></ol>
+    </div>
+    <form id="form">
+      <input
+        type="text"
+        id="activity"
+        placeholder="Add new activity"
+        required
+      />
+      <button id="submit" type="submit" disabled>Add</button>
+    </form>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const myForm = document.getElementById("form");
+        const myActivity = document.getElementById("activity");
+        const myBtn = document.getElementById("submit");
+        const activityList = document.getElementById("activity-list");
+
+        const csrftoken = document.querySelector("[name=csrf-token]").content;
+
+        fetch("http://127.0.0.1:8000/activities/")
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(
+                "Network response was not ok " + response.statusText
+              );
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("Fetched data:", data);
+            data.forEach((activity) => addActivityToDOM(activity));
+          })
+          .catch((error) => console.error("Fetch error:", error));
+
+        myActivity.addEventListener("keyup", function (e) {
+          const value = e.currentTarget.value;
+          myBtn.disabled = value === "";
+        });
+
+        myForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const activity = myActivity.value.trim();
+          if (activity !== "") {
+            saveActivity(activity);
+            myActivity.value = "";
+            myBtn.disabled = true;
+          }
+        });
+
+        function addActivityToDOM(activity) {
+          const listItem = document.createElement("li");
+          listItem.textContent = activity.content;
+          listItem.classList.add("activity-item");
+
+          const editButton = document.createElement("button");
+          editButton.textContent = "Edit";
+          editButton.classList.add("edit-button");
+
+          editButton.addEventListener("click", function () {
+            const newActivity = prompt("Edit your activity:", activity.content);
+            if (newActivity !== null && newActivity.trim() !== "") {
+              updateActivity(activity.id, newActivity);
+              listItem.textContent = newActivity;
+            }
+          });
+
+          const deleteButton = document.createElement("button");
+          deleteButton.textContent = "Delete";
+          deleteButton.classList.add("delete-button");
+
+          deleteButton.addEventListener("click", function () {
+            deleteActivity(activity.id);
+            activityList.removeChild(listItem);
+          });
+
+          listItem.appendChild(deleteButton);
+          listItem.appendChild(editButton);
+
+          activityList.appendChild(listItem); // Append new item to the end of the list
+          
+        }
+
+        function saveActivity(activity) {
+          fetch("http://127.0.0.1:8000/activities/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRFToken": csrftoken,
+            },
+            body: JSON.stringify({ content: activity }),
+          })
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(
+                  "Network response was not ok " + response.statusText
+                );
+              }
+              return response.json();
+            })
+            .then((data) => {
+              console.log("Saved activity:", data);
+              addActivityToDOM(data);
+            })
+            .catch((error) => console.error("Save error:", error));
+        }
+
+        function updateActivity(id, content) {
+          fetch(`http://127.0.0.1:8000/activities/${id}/`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRFToken": csrftoken,
+            },
+            body: JSON.stringify({ content }),
+          })
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(
+                  "Network response was not ok " + response.statusText
+                );
+              }
+              return response.json();
+            })
+            .then((data) => console.log("Updated activity:", data))
+            .catch((error) => console.error("Update error:", error));
+        }
+
+        function deleteActivity(id) {
+          fetch(`http://127.0.0.1:8000/activities/${id}/`, {
+            method: "DELETE",
+            headers: {
+              "X-CSRFToken": csrftoken,
+            },
+          })
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(
+                  "Network response was not ok " + response.statusText
+                );
+              }
+              console.log("Deleted activity:", id);
+            })
+            .catch((error) => console.error("Delete error:", error));
+        }
+      });
+    </script>
+  </body>
+</html>

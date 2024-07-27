@@ -1,0 +1,119 @@
+body, h1, form {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.list {
+    margin-top: 20px;
+}
+
+.list h2 {
+    margin-bottom: 10px;
+}
+
+.list ol {
+    
+    padding: 0;
+}
+
+.list li {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#activity-list {
+    
+    padding: 0;
+  }
+  .activity-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  /* Style for delete button */
+  .delete-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #ff6961;
+    color: #fff; 
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover {
+    background-color: #e74c3c; 
+  }
+  
+  /* Style for edit button */
+  .edit-button {
+    position: absolute;
+    top: 5px;
+    right: 60px; 
+    background-color: #77dd77; 
+    color: #fff; 
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .edit-button:hover {
+    background-color: #4caf50; 
+  }
+
+  
